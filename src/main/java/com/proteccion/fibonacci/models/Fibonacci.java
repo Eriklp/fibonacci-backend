@@ -3,7 +3,7 @@ package com.proteccion.fibonacci.models;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Service;
 
 public class Fibonacci {
     private int[] serie;
@@ -22,7 +22,8 @@ public class Fibonacci {
         }
         setSerie(serie);
 
-        String serieMessage = "La serie fibonacci para las semillas "+x+" y "+y+" con cantindad de "+n+" numeros es: "+serie;
+        String serieMessage = "La serie fibonacci para las semillas "+x+" y "+y+" con cantindad de "+n+" numeros es: "+serie.toString();
+        System.out.println(serieMessage);
         senEmail("didier.correa@proteccion.com.co", "Prueba tecnica - Erik Lopez", serieMessage);
     }
 
