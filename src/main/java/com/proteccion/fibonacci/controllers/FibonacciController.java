@@ -28,7 +28,7 @@ public class FibonacciController {
             fibonacci.calculateFibonacci(x, y, n);
             fibonacci.setStatus("Ok");
         }catch (Exception e) {
-            fibonacci.setStatus("Invalid time format. Please use HH:mm:ss.");
+            fibonacci.setStatus(e+" Invalid time format. Please use HH:mm:ss.");
         }
         return fibonacci;
     }
